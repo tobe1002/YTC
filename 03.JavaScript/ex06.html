@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head charset="UTF-8">
+  <title>Document</title>
+ 
+ <style>
+  div#box {
+    border: 3px double red;
+	background-color: yellow;
+	width: 300px;
+	height: 200px;
+  }
+ </style>
+
+ <script>
+ window.onload = function() {
+   var navi = document.getElementById('navi');
+   navi.style.border = '3px solid red';
+   var lis = document.getElementsByTagName('li');
+   lis[1].style.border = '1px solid green';
+   lis[3].style.border = '1px solid green';
+   lis[lis.length-1].style.background="yellow";
+
+   console.log(lis.length);   
+
+   
+   console.log(lis);
+
+   
+
+ 
+ };
+
+
+ </script>
+ 
+ 
+ </head>
+ <body>
+
+ <ul id="navi">
+	<li>Home</li>
+	<li>Profile</li>
+	<li>Gallery</li>
+	<li>Board</li>
+	<li>Guest</li>
+</ul>
+
+ </body>
+</html>
+

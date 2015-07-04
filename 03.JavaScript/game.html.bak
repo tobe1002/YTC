@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ <script>
+   window.onload = function() {
+     var cells = document.getElementsByTagName("td");
+	 var number = 0;
+	 var startBtn = document.getElementsByTagName("startBtn");
+	 console.log(startBtn);
+      
+
+	 startBtn.onclick = function() {
+       var cnt = 0;
+	   console.log(cnt);
+	   var number =Math.floor(Math.random()*50);
+	   var fn = setInterval(function() {
+	     for (var i=0; i<10 ; i++ )
+	     {
+		   cells[i].style.background ="";
+	     }	 	
+
+	     cells[cnt%10].style.background = "#ffff00";
+	     cnt++;
+		 
+	     if (cnt == number)
+	     {
+			 clearInterval(fn);
+	     }
+
+	   },100);
+	 };
+
+   };
+ 
+
+ </script>
+
+
+ </head>
+ <body>
+  
+
+  <h1>공포의 주루마블</h1>
+  <table border="1" width="1000" height="100">
+    <tr align="center">
+	  <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+	  <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+    </tr>
+  </table>
+  <hr>
+  <button id="startBtn">start</button>
+
+ </body>
+</html>

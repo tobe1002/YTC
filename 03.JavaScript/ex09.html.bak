@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+  div#box {
+    position: absolute;
+    width: 100px;
+	height: 100px; 
+	background: yellow;
+	border: 1px solid red;
+  }
+  </style>
+ <script>
+ window.onload = function() {
+  //var jumin1 = document.getElementById('jumin1');
+  //var jumin2 = document.getElementById('jumin2');
+  
+  //jumin1.focus(); //해당 요소에 커서가 들어간다.
+
+  //jumin1.onkeyup = function() {
+    //console.log(this.value);
+	//console.log("Korea".length);
+    //if (this.value.length == 6)
+    //{
+	  //jumin2.focus();
+    //}
+  //};
+  var box = document.getElementById('box');
+  var rightBtn = document.getElementById('rightBtn');
+  var leftBtn = document.getElementById('leftBtn');
+  var isPress = false;
+  rightBtn.onmousedown = function() {
+	  isPress = true;
+	  speed = 30;
+  }
+  rightBtn.onmouseup = function()  {
+	  isPress = false
+  };
+  leftBtn.onmousedown = function() {
+	  isPress = true;
+	  speed = -30;
+  }
+  leftBtn.onmouseup = function()  {
+	  isPress = false
+  };
+
+  //box.style.left = "150px"
+  var x = 0
+  var fn = setInterval(function() {
+	  if (isPress)
+	  {
+	  x = x + speed;
+	  box.style.left = x + "px";
+
+	  }
+  }, 100); //1000분의 일초 단위로 시간설정 가능.
+
+ };
+ </script>
+ 
+ </head>
+ <body>
+
+ <button id="rightBtn">Right</button> 
+ <button id="leftBtn">Left</button>
+ <div id="box">Box</div>
+
+ </body>
+</html>
+

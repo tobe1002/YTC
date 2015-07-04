@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+  #imgUl li {
+    list-style: none;
+	width: 98px;
+	height: 80px;
+	border: 1px solid red;
+	box-sizing: border-boxing;
+	text-align: center;
+	line-height: 100px;
+	float: left;
+  }
+  ul#imgUl {
+    padding: 0;
+	//width: 500px;
+  }
+
+  div#banner {
+    width: 300px;
+	height: 100px;
+	//overflow: hidden;
+  }
+  </style>
+  <script>
+  window.onload = function() {
+    var imgUl = document.getElementById('imgUl');
+	var imgArr = document.getElementsByTagName('li');
+    var nextBtn = document.getElementById('nextBtn');
+	var prevBtn = document.getElementById('prevBtn');
+    console.log(prevBtn);
+	 
+	var x = 0;
+   nextBtn.onclick = function() {
+
+	 //var fn = setInterval(function() {
+		// x -= 10;
+		// if(x <= -100) {
+			// x = 0;
+			 imgUl.appendChild(imgArr[0]);
+			 //clearInterval(fn);
+			 
+		// }
+		// imgUl.style.marginLeft = x + 'px';
+	// },30);
+
+   };
+   
+   prevBtn.onclick = function() {
+	 imgUl.style.marginLeft = x + 'px';
+	 var fn = setInterval(function() {
+		 x = x + 10;
+		 if(x >= 100) {
+			 x = 0;
+			 imgUl.insertBefore(imgArr[imgArr.length-1], imgArr[0]);
+			 clearInterval(fn);
+			 
+		 }
+		 imgUl.style.marginLeft = x + 'px';
+	 },30);
+
+
+
+
+   };  
+  };
+  </script>
+ </head>
+
+ <body>
+ <button id="nextBtn">Next</button>
+ <button id="prevBtn">Preview</button>
+
+ <div id="banner">
+   <ul id="imgUl">
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+     <li>4</li>
+     <li>5</li>
+   </ul>
+ </div>
+
+ </body>
+</html>

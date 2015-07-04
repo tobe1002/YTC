@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+ <head charset="UTF-8">
+  <title>Document</title>
+ 
+
+ <style>
+  div#box {
+    border: 1px solid red;
+	background-color: yellow;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	/*margin: auto;*/
+  }
+  button {
+    height: 30px; width: 30px;
+  }
+  div#box-area {
+  }
+
+  div#test {
+    height: 10px;
+	width: 10px;
+  }
+ 
+ 
+ </style>
+
+<script>
+ window.onload = function() {
+
+  var btnArea = document.getElementById('button-area');
+  var boxArea = document.getElementById('box-area');
+  var box = document.getElementById('box');
+  var btns = document.getElementsByTagName('button');
+
+  console.log(box.offsetTop);
+  console.log(box.offsetLeft);
+  var FirstMarginLeft = box.offsetLeft - 8 ;
+  var FirstMarginTop = box.offsetTop - 56 ;
+  box.style.marginLeft = FirstMarginLeft + "px";
+  box.style.marginTop = FirstMarginTop + "px";
+  
+  var x = FirstMarginLeft;
+  var y = FirstMarginTop;
+
+  btnArea.style.border = "1px solid black";
+  btnArea.style.width = "120px";
+  btnArea.style.overflow = "hidden";
+  btnArea.style.margin = "auto";
+
+  boxArea.style.border = "1px solid red";
+  boxArea.style.width = "100%";
+  boxArea.style.height = "352px";
+
+  for ( var i=0 ; i<btns.length ; i++ )
+  {
+	  btns[i].style.margin = "5px";
+	  btns[i].style.float = "left";
+  }
+  
+  btns[0].onclick = function() {
+	if ((y > 0) && ( x > 0 ))
+	{
+      x = x - 30;
+	  y = y - 30;
+      box.style.marginLeft = x + "px";
+	  box.style.marginTop = y + "px";
+	}
+  }
+  btns[1].onclick = function() {
+    if ( y > 0 )
+    {
+      y = y - 30;
+      box.style.marginTop = y + "px";
+	}
+  }
+  btns[2].onclick = function() {
+    if ((y != 0) && (box.offsetLeft < (box.offsetParent.offsetWidth - 60)))
+    {
+      x = x + 30;
+	  y = y - 30;
+      box.style.marginLeft = x + "px";
+	  box.style.marginTop = y + "px";
+	}
+  }
+  btns[3].onclick = function() {
+	if ( x > 0)
+	{
+      x = x - 30;
+      box.style.marginLeft = x + "px";
+    }
+  }
+  btns[4].onclick = function() {
+    x = FirstMarginLeft;
+	y = FirstMarginTop;
+	box.style.marginLeft = FirstMarginLeft + "px";
+	box.style.marginTop = FirstMarginTop + "px";
+
+  }
+  btns[5].onclick = function() {
+	if ( box.offsetLeft < (box.offsetParent.offsetWidth - 80) )
+	{
+      x = x + 30;
+      box.style.marginLeft = x + "px";
+	}
+  }
+  btns[6].onclick = function() {
+    if ((x > 0) && (y < 300))
+	{
+      x = x - 30;
+	  y = y + 30;
+      box.style.marginLeft = x + "px";
+	  box.style.marginTop = y + "px";
+	}
+  }
+  btns[7].onclick = function() {
+	if ( y != 300 ) 
+    {
+      y = y + 30;
+      box.style.marginTop = y + "px";
+    }
+  }
+  btns[8].onclick = function() {
+    if((y < 300) && (box.offsetLeft < (box.offsetParent.offsetWidth - 60)))
+	{
+      x = x + 30;
+	  y = y + 30;
+      box.style.marginLeft = x + "px";
+	  box.style.marginTop = y + "px";
+	}
+  }
+
+
+  
+ }
+</script>
+</head>
+
+<body>
+
+<div id="button-area">
+   <button id="btn1">1</button>
+   <button id="btn2">2</button>
+   <button id="btn3">3</button>
+   <button id="btn4">4</button>
+   <button id="btn5">5</button>
+   <button id="btn6">6</button>
+   <button id="btn7">7</button>
+   <button id="btn8">8</button>
+   <button id="btn9">9</button>
+</div>
+<br />
+<div id="box-area">
+   <div id="box">Box</div>
+</div>
+</body>
+
+</html>
+

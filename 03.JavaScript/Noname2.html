@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ <style>
+
+ div#print {
+    height: 50px; width: 200px;
+	border: 1px solid red;
+ }
+
+ div#inputArea {
+    position: relative;
+    overflow: hidden;
+ }
+
+
+ div#buttonArea {
+	overflow: hidden;
+	float: left;
+	border: 1px solid red;
+	width: 158px;
+ }
+ div#buttonArea > button {
+	float: auto;
+	margin-top: 5px;
+	width: 50px; height: 50px;
+ }
+
+  div#operatorArea {
+    overflow: hidden;
+	float: left;
+	border: 1px solid red;
+	width: 40px;
+    margin-left: 10px;
+ }
+
+ div#operatorArea > button {
+    float: left;
+	margin-top: 5px;
+	width: 50px; height: 39px;
+	font-size: 20px;
+ }
+ </style>
+ <script>
+ window.onload = function() {
+   var btn1 = document.getElementById('btn1');
+   var btn2 = document.getElementById('btn2');
+   var btn3 = document.getElementById('btn3');
+   var btn4 = document.getElementById('btn4');
+   var btn5 = document.getElementById('btn5');
+   var btnPlus = document.getElementById('add');
+   var btnEqual = document.getElementById('equal');
+   var result = document.getElementById('result');
+   console.log(btn1);
+
+   btn1.onclick = function() {
+   result.value += this.innerText;
+   }
+
+    // result.value(Input태그에 넣은값)는 문자열이니 partInt(result.value); 로 숫자열로 변환
+ };
+ </script>
+ 
+ 
+ 
+ </head>
+ <body>
+ <div id="print"><input type="text" id="result"></div>
+
+ <div id="inputArea">
+ <div id="buttonArea">
+  <button id="btn1">1</button>
+  <button id="btn2">2</button>
+  <button id="btn3">3</button>
+  <button id="btn4">4</button>
+  <button id="btn5">5</button>
+  <button id="btn6">6</button>
+  <button id="btn7">7</button>
+  <button id="btn8">8</button>
+  <button id="btn9">9</button>
+  <button id="btnSharp">#</button>
+  <button id="btn0">0</button>
+  <button id="btnAstrerik">*</button>
+ </div>
+
+ <div id="operatorArea">
+  <button id="add">=</button>
+  <button id="sub">+</button>
+  <button id="multiple">-</button>
+  <button id="divide">*</button>
+  <button id="equal">/</button>
+ </div>
+ </div>
+ </body>
+</html>

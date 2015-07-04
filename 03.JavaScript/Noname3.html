@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+ <script>
+   window.onload = function() {
+     var bt1 = document.getElementById('1');
+     var bt2 = document.getElementById('2');
+	 var plus = document.getElementById('+');
+	 var equal = document.getElementById('=');
+	 var result = document.getElementById('result');  
+
+	 bt1.onclick = function() {
+       result.value += this.id;
+	 };
+	 bt2.onclick = function() {
+       result.value += this.id;
+	 };
+	 plus.onclick = function() {
+       result.value += this.id;
+	 };
+	 equal.onclick = function() {
+       result.value = eval(result.value);
+	 };
+   }
+ </script>
+
+ </head>
+ <body>
+   <input type="text" id="result">
+   <hr />
+   <button id="1">1</button>
+   <button id="2">2</button>
+   <button id="+">+</button>
+   <button id="=">=</button>
+ </body>
+</html>

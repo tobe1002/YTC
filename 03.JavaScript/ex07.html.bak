@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+ <head charset="UTF-8">
+  <title>Document</title>
+ 
+ <style>
+  div#box {
+    border: 3px double red;
+	background-color: yellow;
+	width: 300px;
+	height: 200px;
+  }
+ </style>
+
+ <script>
+ window.onload = function() {
+   var navi = document.getElementById('navi');
+   navi.style.border = '1px solid red';
+   navi.style.overflow = 'hidden';
+
+
+   var lis = document.getElementsByTagName('li');
+
+   for(var i=0; i<lis.length; i++) {
+     lis[i].style.border = "1px solid red";   
+     lis[i].style.width = "100px";
+	 lis[i].style.listStyle = "None";
+	 lis[i].style.float = "left";
+   }
+   
+
+ 
+ };
+
+
+ </script>
+ 
+ 
+ </head>
+ <body>
+
+ <ul id="navi">
+	<li>Home</li>
+	<li>Profile</li>
+	<li>Gallery</li>
+	<li>Board</li>
+	<li>Guest</li>
+</ul>
+
+ </body>
+</html>
+

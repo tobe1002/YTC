@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+ <head charset="UTF-8">
+  <title>Document</title>
+ 
+ <style>
+  div#box {
+    border: 1px solid red;
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+  }
+ </style>
+
+<script>
+  window.onload = function() {
+    var nextBtn = document.getElementById('btn');
+	var box = document.getElementById('box');
+    var x = 0;
+	nextBtn.onclick = function() {
+		console.log('Clicked next button');
+		//box.style.color = "red";
+
+	x = x + 100;
+		console.log(x);
+		box.style.marginLeft = x + "px";
+	}
+  }
+	
+
+
+
+</script>
+ 
+ 
+ </head>
+
+ <body>
+   <div id="box">Box</div>
+   <button id="btn">Next</button>
+ </body>
+
+</html>
+
